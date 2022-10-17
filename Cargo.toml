@@ -7,6 +7,17 @@ edition = "2021"
 
 [dependencies]
 axum = "0.6.0-rc.2"
+serde = { version = "1.0.145", features = ["derive"] }
+serde_json = "1.0.86"
 hyper = { version = "0.14.20", features = ["full"] }
 tokio = { version = "1.21.2", features = ["full"] }
-tower = "0.4.13"
+
+[dependencies.uuid]
+version = "1.2.1"
+features = [
+    "v4",                # Lets you generate random UUIDs
+    "v7",                # DB-friendly UUID
+    "fast-rng",          # Use a faster (but still sufficiently random) RNG
+    "macro-diagnostics", # Enable better diagnostics for compile-time UUIDs
+    "serde",
+]
